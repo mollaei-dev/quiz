@@ -64,3 +64,16 @@ function loadQuestion() {
     elAnswers.appendChild(btn);
   });
 }
+
+btnNext.addEventListener("click", () => {
+  number++;
+  if (number < quizData.length) {
+    loadQuestion();
+  } else {
+    elQuestion.textContent = `پایان بازی! امتیاز شما: ${score} از ${quizData.length}`;
+    elAnswers.innerHTML = "";
+    btnNext.style.display = "none";
+    elResult.textContent = "";
+  }
+});
+loadQuestion();
