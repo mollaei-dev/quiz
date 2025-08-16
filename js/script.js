@@ -64,6 +64,20 @@ function loadQuestion() {
     elAnswers.appendChild(btn);
   });
 }
+function selectAnswer(selectedIndex) {
+  const correctIndex = quizData[number].answer;
+  if (selectedIndex === correctIndex) {
+    score++;
+    elResult.textContent = "🎉 آفرین! ";
+    elResult.style.color = "green";
+  } else {
+    elResult.textContent = `❌  اشتباه  ❌
+    جواب درست: ${quizData[number].options[correctIndex]}`;
+    elResult.style.color = "#D32F2F";
+  }
+  btnNext.style.display = "block";
+  Array.from(elAnswers.children).forEach((btn) => (btn.disabled = true));
+}
 
 btnNext.addEventListener("click", () => {
   number++;
