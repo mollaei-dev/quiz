@@ -84,7 +84,7 @@ btnNext.addEventListener("click", () => {
   if (number < quizData.length) {
     loadQuestion();
   } else {
-    elQuestion.textContent = `پایان بازی! امتیاز شما: ${score} از ${quizData.length}`;
+    elQuestion.textContent = `پایان بازی! امتیاز شما : ${score} از ${quizData.length}`;
     elAnswers.innerHTML = "";
     btnNext.style.display = "none";
     elResult.textContent = "";
